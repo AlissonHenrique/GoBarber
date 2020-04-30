@@ -44,3 +44,18 @@ This project is based on an application for a hair salon. Containing scheduling,
 - **Go to repository folder**
 - `yarn dev:server` (in Backend)
 - `yarn start` (in Frontend)
+
+
+
+## :memo: License
+This project is under the MIT license. See the [LICENSE]() for more information.
+
+---
+
+Made with ♥ by Luke Morales :wave: [Get in touch!](https://www.linkedin.com/in/alissonhenri/)
+
+[nodejs]: https://nodejs.org/
+[yarn]: https://yarnpkg.com/
+[vc]: https://code.visualstudio.com/
+[vceditconfig]: https://marketplace.visualstudio.com/items?itemName=EditorConfig.EditorConfig
+[vceslint]: https://marketplace.visualstudio.com/items?itemName=dbaeumer.vscode-eslint
