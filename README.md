@@ -1,6 +1,4 @@
-<h1 align="center">
-    <img alt="GoBarber API" src="https://res.cloudinary.com/lukemorales/image/upload/v1564533051/readme_logos/gobarber_hg5ddx.png" />
-    <br>
+<h1 align="center">  
     GoBarber API
 </h1>
 
@@ -52,7 +50,7 @@ This project is under the MIT license. See the [LICENSE]() for more information.
 
 ---
 
-Made with ♥ by Luke Morales :wave: [Get in touch!](https://www.linkedin.com/in/alissonhenri/)
+Made with ♥ by Alisson Henrique :wave: [Get in touch!](https://www.linkedin.com/in/alissonhenri/)
 
 [nodejs]: https://nodejs.org/
 [yarn]: https://yarnpkg.com/
