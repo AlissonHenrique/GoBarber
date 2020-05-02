@@ -1,5 +1,5 @@
 Arguments: 
-  /usr/bin/node /usr/share/yarn/bin/yarn.js add @types/bcriptjs -D
+  /usr/bin/node /usr/share/yarn/bin/yarn.js add jsonerboken
 
 PATH: 
   /home/alisson/.yarn/bin:/home/alisson/.config/yarn/global/node_modules/.bin:/home/alisson/.yarn/bin:/home/alisson/.config/yarn/global/node_modules/.bin:/home/alisson/.zinit/polaris/bin:/home/alisson/.yarn/bin:/home/alisson/.config/yarn/global/node_modules/.bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:/home/alisson/Android/Sdk/tools:/home/alisson/Android/Sdk/platform-tools:/home/alisson/android-studio/bin:/home/alisson/Android/Sdk/tools:/home/alisson/Android/Sdk/platform-tools:/home/alisson/android-studio/bin
@@ -14,7 +14,7 @@ Platform:
   linux x64
 
 Trace: 
-  Error: https://registry.yarnpkg.com/@types%2fbcriptjs: Not found
+  Error: https://registry.yarnpkg.com/jsonerboken: Not found
       at Request.params.callback [as _callback] (/usr/share/yarn/lib/cli.js:66987:18)
       at Request.self.callback (/usr/share/yarn/lib/cli.js:140748:22)
       at Request.emit (events.js:198:13)
@@ -47,6 +47,7 @@ npm manifest:
       "uuidv4": "^6.0.7"
     },
     "devDependencies": {
+      "@types/bcryptjs": "^2.4.2",
       "@types/express": "^4.17.6",
       "@typescript-eslint/eslint-plugin": "^2.28.0",
       "eslint": "^5.16.0",
@@ -85,6 +86,11 @@ Lockfile:
       "@babel/helper-validator-identifier" "^7.9.0"
       chalk "^2.0.0"
       js-tokens "^4.0.0"
+  
+  "@types/bcryptjs@^2.4.2":
+    version "2.4.2"
+    resolved "https://registry.yarnpkg.com/@types/bcryptjs/-/bcryptjs-2.4.2.tgz#e3530eac9dd136bfdfb0e43df2c4c5ce1f77dfae"
+    integrity sha512-LiMQ6EOPob/4yUL66SZzu6Yh77cbzJFYll+ZfaPiPPFswtIlA/Fs1MzdKYA7JApHU49zQTbJGX3PDmCpIdDBRQ==
   
   "@types/body-parser@*":
     version "1.19.0"

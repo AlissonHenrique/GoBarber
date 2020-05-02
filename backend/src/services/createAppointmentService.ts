@@ -2,6 +2,7 @@ import Appointment from '../models/Appointment';
 import AppointmentsRepository from '../repositories/AppointmentsRepository';
 import { startOfHour } from 'date-fns';
 import { getCustomRepository } from 'typeorm';
+import AppError from '../erros/AppError';
 
 interface RequestDTO {
   date: Date;
@@ -20,7 +21,7 @@ class CreateAppointmentService {
       appointmentDate,
     );
     if (findAppointmentInSameDate) {
-      throw Error('This aappointment is alterady booked');
+      throw new AppError('This aappointment is alterady booked');
     }
     const appointment = appointmentsRepository.create({
       provider_id,
