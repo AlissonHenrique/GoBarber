@@ -14,7 +14,7 @@ This project is based on an application for a hair salon. Containing scheduling,
 #### To start, **Docker** is required
 
 ### :rocket: How to install and start 
-- `git clone https://github.com/AlissonHenrique/GoBarber.git
+- `git clone https://github.com/AlissonHenrique/GoBarber.git`
 - **Go to repository folder**
 - `yarn dev:server` (in Backend)
 - `yarn start` (in Frontend)
