@@ -2,6 +2,14 @@
   "name": "appgobarber",
   "version": "0.0.1",
   "private": true,
+<<<<<<< HEAD
+=======
+  "rnpm": {
+    "assets": [
+      "./assets/fonts/"
+    ]
+  },
+>>>>>>> 70e2d7d8f30c96ec7e91c6598489f50c89e4d706
   "scripts": {
     "android": "react-native run-android",
     "ios": "react-native run-ios",
@@ -10,8 +18,30 @@
     "lint": "eslint . --ext .js,.jsx,.ts,.tsx"
   },
   "dependencies": {
+<<<<<<< HEAD
     "react": "16.11.0",
     "react-native": "0.62.2"
+=======
+    "@react-native-community/async-storage": "^1.10.3",
+    "@react-native-community/masked-view": "^0.1.10",
+    "@react-navigation/native": "^5.4.3",
+    "@react-navigation/stack": "^5.4.0",
+    "@types/react-native-vector-icons": "^6.4.5",
+    "@types/yup": "^0.29.0",
+    "@unform/core": "^2.1.0",
+    "@unform/mobile": "^2.1.0",
+    "axios": "^0.19.2",
+    "react": "16.11.0",
+    "react-native": "0.62.2",
+    "react-native-gesture-handler": "^1.6.1",
+    "react-native-iphone-x-helper": "^1.2.1",
+    "react-native-reanimated": "^1.9.0",
+    "react-native-safe-area-context": "^2.0.0",
+    "react-native-screens": "^2.8.0",
+    "react-native-vector-icons": "^6.6.0",
+    "styled-components": "^5.1.0",
+    "yup": "^0.29.0"
+>>>>>>> 70e2d7d8f30c96ec7e91c6598489f50c89e4d706
   },
   "devDependencies": {
     "@babel/core": "^7.6.2",
@@ -20,6 +50,7 @@
     "@types/jest": "^24.0.24",
     "@types/react-native": "^0.62.0",
     "@types/react-test-renderer": "16.9.2",
+<<<<<<< HEAD
     "@typescript-eslint/eslint-plugin": "^2.27.0",
     "@typescript-eslint/parser": "^2.27.0",
     "babel-jest": "^24.9.0",
@@ -28,6 +59,25 @@
     "metro-react-native-babel-preset": "^0.58.0",
     "react-test-renderer": "16.11.0",
     "prettier": "^2.0.4",
+=======
+    "@types/styled-components": "^5.1.0",
+    "@typescript-eslint/eslint-plugin": "^3.0.0",
+    "@typescript-eslint/parser": "^3.0.1-alpha.7",
+    "babel-jest": "^24.9.0",
+    "eslint": "^5.16.0",
+    "eslint-config-airbnb": "^18.1.0",
+    "eslint-config-prettier": "^6.11.0",
+    "eslint-import-resolver-typescript": "^2.0.0",
+    "eslint-plugin-import": "^2.20.1",
+    "eslint-plugin-jsx-a11y": "^6.2.3",
+    "eslint-plugin-prettier": "^3.1.3",
+    "eslint-plugin-react": "^7.19.0",
+    "eslint-plugin-react-hooks": "^2.5.0",
+    "jest": "^24.9.0",
+    "metro-react-native-babel-preset": "^0.58.0",
+    "prettier": "^2.0.5",
+    "react-test-renderer": "16.11.0",
+>>>>>>> 70e2d7d8f30c96ec7e91c6598489f50c89e4d706
     "typescript": "^3.8.3"
   },
   "jest": {
