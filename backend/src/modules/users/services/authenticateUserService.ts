@@ -1,9 +1,10 @@
-import { getRepository } from 'typeorm';
 import { compare } from 'bcryptjs';
 import { sign } from 'jsonwebtoken';
 import User from '../infra/typeorm/entities/User';
 import authConfig from '@config/auth';
 import AppError from '@shared/erros/AppError';
+import IUsersRepository from '../repositories/IUsersRepository';
+import { injectable, inject } from 'tsyringe';
 
 interface IRequest {
   email: string;
@@ -15,10 +16,15 @@ interface IResponse {
   token: string;
 }
 
+@injectable()
 class AuthenticateUserService {
+  constructor(
+    @inject('UsersRepository')
+    private usersRepository: IUsersRepository,
+  ) {}
+
   public async execute({ email, password }: IRequest): Promise<IResponse> {
-    const usersRepository = getRepository(User);
-    const user = await usersRepository.findOne({ where: { email } });
+    const user = await this.usersRepository.findByEmail(email);
     if (!user) {
       throw new AppError('Incorrect email/password combination', 401);
     }
