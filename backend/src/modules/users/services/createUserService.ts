@@ -1,6 +1,6 @@
 ///REGRAS DE NEGOCIO DA APLICAÇÃO
 
-import { hash } from 'bcryptjs';
+import IHashProvider from '../providers/HashProvider/models/IHashProvider';
 import User from '../infra/typeorm/entities/User';
 import AppError from '@shared/erros/AppError';
 import IUsersRepository from '../repositories/IUsersRepository';
@@ -17,13 +17,15 @@ class CreateUserService {
   constructor(
     @inject('UsersRepository')
     private usersRepository: IUsersRepository,
+    @inject('HashProvider')
+    private hashProvider: IHashProvider,
   ) {}
   public async execute({ name, email, password }: Request): Promise<User> {
     const checkUserExists = await this.usersRepository.findByEmail(email);
     if (checkUserExists) {
       throw new AppError('Email address used');
     }
-    const hashPassword = await hash(password, 8);
+    const hashPassword = await this.hashProvider.generationHash(password);
     const user = await this.usersRepository.create({
       name,
       email,
