@@ -16,7 +16,7 @@ describe('CreateUser', () => {
       email: 'joao@gmail.com',
       password: '22222',
     });
-    expect(user).toHaveProperty('id');
+    await expect(user).toHaveProperty('id');
   });
   it('shold be able to  create a new user with same email', async () => {
     const fakeUserRepository = new FakeUserRepository();
@@ -31,7 +31,7 @@ describe('CreateUser', () => {
       email: 'joao@gmail.com',
       password: '22222',
     });
-    expect(
+    await expect(
       createUserService.execute({
         name: ' João',
         email: 'joao@gmail.com',

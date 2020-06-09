@@ -4,7 +4,7 @@ import User from '../../infra/typeorm/entities/User';
 import { uuid } from 'uuidv4';
 import AddAvatarFieldToUsers1588361732738 from '@shared/infra/typeorm/migrations/1588361732738-AddAvatarFieldToUsers';
 
-class UsersRepository implements IUsersRepository {
+class FakeUsersRepository implements IUsersRepository {
   private users: User[] = [];
 
   public async findById(id: string): Promise<User | undefined> {
@@ -34,4 +34,4 @@ class UsersRepository implements IUsersRepository {
     return user;
   }
 }
-export default UsersRepository;
+export default FakeUsersRepository;
