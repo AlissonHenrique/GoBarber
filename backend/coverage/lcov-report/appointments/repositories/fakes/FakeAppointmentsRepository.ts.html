@@ -23,9 +23,9 @@
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">0% </span>
+                <span class="strong">100% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>0/18</span>
+                <span class='fraction'>18/18</span>
             </div>
         
             
@@ -37,16 +37,16 @@
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">0% </span>
+                <span class="strong">100% </span>
                 <span class="quiet">Functions</span>
-                <span class='fraction'>0/4</span>
+                <span class='fraction'>4/4</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">0% </span>
+                <span class="strong">100% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>0/18</span>
+                <span class='fraction'>18/18</span>
             </div>
         
             
@@ -55,7 +55,7 @@
             Press <em>n</em> or <em>j</em> to go to the next uncovered block, <em>b</em>, <em>p</em> or <em>k</em> for the previous block.
         </p>
     </div>
-    <div class='status-line low'></div>
+    <div class='status-line high'></div>
     <pre><table class="coverage">
 <tr><td class="line-count quiet"><a name='L1'></a><a href='#L1'>1</a>
 <a name='L2'></a><a href='#L2'>2</a>
@@ -85,62 +85,62 @@
 <a name='L26'></a><a href='#L26'>26</a>
 <a name='L27'></a><a href='#L27'>27</a>
 <a name='L28'></a><a href='#L28'>28</a>
-<a name='L29'></a><a href='#L29'>29</a></td><td class="line-coverage quiet"><span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<a name='L29'></a><a href='#L29'>29</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">3x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">3x</span>
+<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">3x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-yes">2x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">2x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">2x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">2x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">2x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js"><span class="cstat-no" title="statement not covered" >import { uuid } from 'uuidv4';</span>
-<span class="cstat-no" title="statement not covered" >import { isEqual } from 'date-fns';</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">import { uuid } from 'uuidv4';
+import { isEqual } from 'date-fns';
 import IAppointmentsRepository from '@modules/appointments/repositories/IAppointmentsRepository';
 import ICreateAppointmentsDTO from '@modules/appointments/dtos/ICreateAppointmentsDTO';
-<span class="cstat-no" title="statement not covered" >import Appointment from '../../infra/typeorm/entities/Appointment';</span>
-<span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" >class AppointmentsRepository implements IAppointmentsRepository {</span></span>
-  private <span class="cstat-no" title="statement not covered" >apointments: Appointment[] = [];</span>
+import Appointment from '../../infra/typeorm/entities/Appointment';
+class AppointmentsRepository implements IAppointmentsRepository {
+  private apointments: Appointment[] = [];
 &nbsp;
-<span class="fstat-no" title="function not covered" >  public async <span class="cstat-no" title="statement not covered" >f</span>indByDate(date: Date): Promise&lt;Appointment | undefined&gt; {</span>
-    const <span class="cstat-no" title="statement not covered" >findAppointment = this.apointments.find(<span class="fstat-no" title="function not covered" >appointment </span>=&gt;</span>
-<span class="cstat-no" title="statement not covered" >      isEqual(appointment.date, date),</span>
+  public async findByDate(date: Date): Promise&lt;Appointment | undefined&gt; {
+    const findAppointment = this.apointments.find(appointment =&gt;
+      isEqual(appointment.date, date),
     );
-<span class="cstat-no" title="statement not covered" >    return findAppointment;</span>
+    return findAppointment;
   }
-<span class="fstat-no" title="function not covered" >  public async <span class="cstat-no" title="statement not covered" >c</span>reate({</span>
-<span class="cstat-no" title="statement not covered" >    provider_id,</span>
-<span class="cstat-no" title="statement not covered" >    date,</span>
+  public async create({
+    provider_id,
+    date,
   }: ICreateAppointmentsDTO): Promise&lt;Appointment&gt; {
-    const <span class="cstat-no" title="statement not covered" >appointment = new Appointment();</span>
+    const appointment = new Appointment();
 &nbsp;
-<span class="cstat-no" title="statement not covered" >    Object.assign(appointment, { id: uuid(), date, provider_id });</span>
+    Object.assign(appointment, { id: uuid(), date, provider_id });
 &nbsp;
-<span class="cstat-no" title="statement not covered" >    this.apointments.push(appointment);</span>
+    this.apointments.push(appointment);
 &nbsp;
-<span class="cstat-no" title="statement not covered" >    return appointment;</span>
+    return appointment;
   }
-<span class="cstat-no" title="statement not covered" >}</span>
-<span class="cstat-no" title="statement not covered" >export default AppointmentsRepository;</span>
+}
+export default AppointmentsRepository;
 &nbsp;</pre></td></tr></table></pre>
 
                 <div class='push'></div><!-- for sticky footer -->
@@ -148,7 +148,7 @@ import ICreateAppointmentsDTO from '@modules/appointments/dtos/ICreateAppointmen
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank">istanbul</a>
-                at Tue Jun 09 2020 15:41:46 GMT-0300 (GMT-03:00)
+                at Thu Jun 11 2020 12:37:34 GMT-0300 (GMT-03:00)
             </div>
         </div>
         <script src="../../../prettify.js"></script>

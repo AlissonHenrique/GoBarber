@@ -3,7 +3,7 @@
 <html lang="en">
 
 <head>
-    <title>Code coverage report for appointments/infra/http/controllers/AppointmentsController.ts</title>
+    <title>Code coverage report for users/infra/http/routes/profile.routes.ts</title>
     <meta charset="utf-8" />
     <link rel="stylesheet" href="../../../../prettify.css" />
     <link rel="stylesheet" href="../../../../base.css" />
@@ -19,13 +19,13 @@
 <body>
 <div class='wrapper'>
     <div class='pad1'>
-        <h1><a href="../../../../index.html">All files</a> / <a href="index.html">appointments/infra/http/controllers</a> AppointmentsController.ts</h1>
+        <h1><a href="../../../../index.html">All files</a> / <a href="index.html">users/infra/http/routes</a> profile.routes.ts</h1>
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
                 <span class="strong">0% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>0/12</span>
+                <span class='fraction'>0/8</span>
             </div>
         
             
@@ -37,16 +37,16 @@
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">0% </span>
+                <span class="strong">100% </span>
                 <span class="quiet">Functions</span>
-                <span class='fraction'>0/2</span>
+                <span class='fraction'>0/0</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
                 <span class="strong">0% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>0/11</span>
+                <span class='fraction'>0/8</span>
             </div>
         
             
@@ -70,53 +70,32 @@
 <a name='L11'></a><a href='#L11'>11</a>
 <a name='L12'></a><a href='#L12'>12</a>
 <a name='L13'></a><a href='#L13'>13</a>
-<a name='L14'></a><a href='#L14'>14</a>
-<a name='L15'></a><a href='#L15'>15</a>
-<a name='L16'></a><a href='#L16'>16</a>
-<a name='L17'></a><a href='#L17'>17</a>
-<a name='L18'></a><a href='#L18'>18</a>
-<a name='L19'></a><a href='#L19'>19</a>
-<a name='L20'></a><a href='#L20'>20</a>
-<a name='L21'></a><a href='#L21'>21</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<a name='L14'></a><a href='#L14'>14</a></td><td class="line-coverage quiet"><span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">import { Request, Response } from 'express';
-<span class="cstat-no" title="statement not covered" >import { parseISO } from 'date-fns';</span>
-<span class="cstat-no" title="statement not covered" >import { container } from 'tsyringe';</span>
-<span class="cstat-no" title="statement not covered" >import CreateAppointmentService from '@modules/appointments/services/CreateAppointmentService';</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js"><span class="cstat-no" title="statement not covered" >import { Router } from 'express';</span>
 &nbsp;
-<span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" >export default class AppointmentsController {</span></span>
-<span class="fstat-no" title="function not covered" >  public async <span class="cstat-no" title="statement not covered" >c</span>reate(request: Request, response: Response): Promise&lt;Response&gt; {</span>
-    const <span class="cstat-no" title="statement not covered" >{ provider_id, date } = r</span>equest.body;
+<span class="cstat-no" title="statement not covered" >import midlewareAuthenticate from '../midlewares/ensureAuthenticated';</span>
 &nbsp;
-    const <span class="cstat-no" title="statement not covered" >parseDate = parseISO(date);</span>
+<span class="cstat-no" title="statement not covered" >import ProfileController from '../controllers/ProfileController';</span>
 &nbsp;
-    const <span class="cstat-no" title="statement not covered" >createAppointment = container.resolve(CreateAppointmentService);</span>
+const profileRouter = <span class="cstat-no" title="statement not covered" >Router();</span>
+const profileController = <span class="cstat-no" title="statement not covered" >new ProfileController();</span>
 &nbsp;
-    const <span class="cstat-no" title="statement not covered" >appointment = <span class="cstat-no" title="statement not covered" >await createAppointment.execute({</span></span>
-      date: parseDate,
-      provider_id,
-    });
-<span class="cstat-no" title="statement not covered" >    return response.json(appointment);</span>
-  }
-<span class="cstat-no" title="statement not covered" >}</span>
+<span class="cstat-no" title="statement not covered" >profileRouter.use(midlewareAuthenticate);</span>
+<span class="cstat-no" title="statement not covered" >profileRouter.put('/', profileController.update);</span>
+&nbsp;
+<span class="cstat-no" title="statement not covered" >export default profileRouter;</span>
 &nbsp;</pre></td></tr></table></pre>
 
                 <div class='push'></div><!-- for sticky footer -->

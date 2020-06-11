@@ -1,5 +1,5 @@
 import { Request, Response } from 'express';
-import AuthenticateUserService from '@modules/users/services/authenticateUserService';
+import AuthenticateUserService from '@modules/users/services/AuthenticateUserService';
 import { container } from 'tsyringe';
 
 export default class SessionController {

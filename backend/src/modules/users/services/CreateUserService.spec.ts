@@ -1,16 +1,24 @@
 import 'reflect-metadata';
-import CreateUserService from './createUserService';
+import CreateUserService from './CreateUserService';
 import FakeUserRepository from '../repositories/fakes/FakeUsersRepository';
 import AppError from '@shared/erros/AppError';
 import FakeHashProvider from '../providers/HashProvider/fakes/FakeHashProvider';
+
+let fakeUserRepository: FakeUserRepository;
+let fakeHashProvider: FakeHashProvider;
+let createUserService: CreateUserService;
+
 describe('CreateUser', () => {
-  it('shold be able to create a new user', async () => {
-    const fakeUserRepository = new FakeUserRepository();
-    const fakeHashProvider = new FakeHashProvider();
-    const createUserService = new CreateUserService(
+  beforeEach(() => {
+    fakeUserRepository = new FakeUserRepository();
+    fakeHashProvider = new FakeHashProvider();
+    createUserService = new CreateUserService(
       fakeUserRepository,
       fakeHashProvider,
     );
+  });
+
+  it('shold be able to create a new user', async () => {
     const user = await createUserService.execute({
       name: ' João',
       email: 'joao@gmail.com',
@@ -19,13 +27,6 @@ describe('CreateUser', () => {
     await expect(user).toHaveProperty('id');
   });
   it('shold be able to  create a new user with same email', async () => {
-    const fakeUserRepository = new FakeUserRepository();
-    const fakeHashProvider = new FakeHashProvider();
-    const createUserService = new CreateUserService(
-      fakeUserRepository,
-      fakeHashProvider,
-    );
-
     await createUserService.execute({
       name: ' João',
       email: 'joao@gmail.com',

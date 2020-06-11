@@ -1,13 +1,16 @@
 import CreateAppointmentService from './CreateAppointmentService';
 import FakeAppointmentRepository from '../repositories/fakes/FakeAppointmentsRepository';
 import AppError from '@shared/erros/AppError';
+let fakeAppointmentRepository: FakeAppointmentRepository;
+let createAppointment: CreateAppointmentService;
 
 describe('CreateAppoint', () => {
+  beforeEach(() => {
+    fakeAppointmentRepository = new FakeAppointmentRepository();
+    createAppointment = new CreateAppointmentService(fakeAppointmentRepository);
+  });
+
   it('shold be able to create a new appointment', async () => {
-    const fakeAppointmentRepository = new FakeAppointmentRepository();
-    const createAppointment = new CreateAppointmentService(
-      fakeAppointmentRepository,
-    );
     const appointment = await createAppointment.execute({
       date: new Date(),
       provider_id: '123',
