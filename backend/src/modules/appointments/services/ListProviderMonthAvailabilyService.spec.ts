@@ -1,5 +1,5 @@
 import 'reflect-metadata';
-import AppError from '@shared/erros/AppError';
+
 import ListProviderMonthAvailabilyService from './ListProviderMonthAvailabilyService';
 import FakeAppointmentsRepository from '../repositories/fakes/FakeAppointmentsRepository';
 
@@ -77,6 +77,7 @@ describe('ListProviderMonthAvailabily', () => {
       year: 2020,
       month: 5,
     });
+
     expect(availability).toEqual(
       expect.arrayContaining([
         { day: 19, avaiable: true },

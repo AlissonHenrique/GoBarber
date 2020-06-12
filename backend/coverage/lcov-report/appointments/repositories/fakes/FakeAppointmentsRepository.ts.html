@@ -30,9 +30,9 @@
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">33.33% </span>
+                <span class="strong">42.86% </span>
                 <span class="quiet">Branches</span>
-                <span class='fraction'>3/9</span>
+                <span class='fraction'>3/7</span>
             </div>
         
             
@@ -121,8 +121,7 @@
 <a name='L62'></a><a href='#L62'>62</a>
 <a name='L63'></a><a href='#L63'>63</a>
 <a name='L64'></a><a href='#L64'>64</a>
-<a name='L65'></a><a href='#L65'>65</a>
-<a name='L66'></a><a href='#L66'>66</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">1x</span>
+<a name='L65'></a><a href='#L65'>65</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -134,41 +133,26 @@
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">11x</span>
-<span class="cline-any cline-yes">11x</span>
-<span class="cline-any cline-yes">11x</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">11x</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">11x</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">11x</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">11x</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">12x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">11x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-no">&nbsp;</span>
@@ -184,6 +168,20 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">12x</span>
+<span class="cline-any cline-yes">12x</span>
+<span class="cline-any cline-yes">12x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">12x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">12x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">12x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">12x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
@@ -196,19 +194,46 @@ import Appointment from '../../infra/typeorm/entities/Appointment';
 import IFindAllInDayFromProviderDTO from '@modules/appointments/dtos/IFindAllInDayFromProviderDTO';
 &nbsp;
 class AppointmentsRepository implements IAppointmentsRepository {
-  private apointments: Appointment[] = [];
+  private appointments: Appointment[] = [];
 &nbsp;
-<span class="fstat-no" title="function not covered" >  public async f</span>indByDate(
-    date: Date,
-    provider_id: string,
-  ): Promise&lt;Appointment | undefined&gt; {
-    const <span class="cstat-no" title="statement not covered" >findAppointment = this.apointments.find(</span>
-<span class="fstat-no" title="function not covered" >      appointment </span>=&gt;
-<span class="cstat-no" title="statement not covered" >        isEqual(appointment.date, date) &amp;&amp;</span>
-        appointment.provider_id === provider_id,
+<span class="fstat-no" title="function not covered" >  public async f</span>indByDate(date: Date): Promise&lt;Appointment | undefined&gt; {
+    const <span class="cstat-no" title="statement not covered" >findAppointment = this.appointments.find(<span class="fstat-no" title="function not covered" >appointment </span>=&gt;</span>
+<span class="cstat-no" title="statement not covered" >      isEqual(appointment.date, date),</span>
     );
 <span class="cstat-no" title="statement not covered" >    return findAppointment;</span>
   }
+&nbsp;
+  public async findAllInMonthFromProvider({
+    month,
+    year,
+    provider_id,
+  }: IFindAllInMonthFromProviderDTO): Promise&lt;Appointment[]&gt; {
+    const appointments = this.appointments.filter(appointment =&gt; {
+      return (
+        appointment.provider_id === provider_id &amp;&amp;
+        getMonth(appointment.date) + 1 === month &amp;&amp;
+        getYear(appointment.date) === year
+      );
+    });
+    return appointments;
+  }
+&nbsp;
+<span class="fstat-no" title="function not covered" >  public async f</span>indAllInDayFromProvider({
+<span class="cstat-no" title="statement not covered" >    provider_id,</span>
+<span class="cstat-no" title="statement not covered" >    day,</span>
+<span class="cstat-no" title="statement not covered" >    month,</span>
+<span class="cstat-no" title="statement not covered" >    year,</span>
+  }: IFindAllInDayFromProviderDTO): Promise&lt;Appointment[]&gt; {
+    const <span class="cstat-no" title="statement not covered" >filterApointments = this.appointments.filter(</span>
+<span class="fstat-no" title="function not covered" >      appointment </span>=&gt;
+<span class="cstat-no" title="statement not covered" >        appointment.provider_id === provider_id &amp;&amp;</span>
+        getDate(appointment.date) === day &amp;&amp;
+        getMonth(appointment.date) + 1 === month &amp;&amp;
+        getYear(appointment.date) === year,
+    );
+<span class="cstat-no" title="statement not covered" >    return filterApointments;</span>
+  }
+&nbsp;
   public async create({
     provider_id,
     user_id,
@@ -218,37 +243,9 @@ class AppointmentsRepository implements IAppointmentsRepository {
 &nbsp;
     Object.assign(appointment, { id: uuid(), date, provider_id, user_id });
 &nbsp;
-    this.apointments.push(appointment);
+    this.appointments.push(appointment);
 &nbsp;
     return appointment;
-  }
-  public async findAllInMonthFromProvider({
-    month,
-    year,
-    provider_id,
-  }: IFindAllInMonthFromProviderDTO): Promise&lt;Appointment[]&gt; {
-    const filterApointments = this.apointments.filter(
-      apointment =&gt;
-        apointment.provider_id === provider_id &amp;&amp;
-        getMonth(apointment.date) + 1 === month &amp;&amp;
-        getYear(apointment.date) === year,
-    );
-    return filterApointments;
-  }
-<span class="fstat-no" title="function not covered" >  public async f</span>indAllInDayFromProvider({
-<span class="cstat-no" title="statement not covered" >    month,</span>
-<span class="cstat-no" title="statement not covered" >    year,</span>
-<span class="cstat-no" title="statement not covered" >    day,</span>
-<span class="cstat-no" title="statement not covered" >    provider_id,</span>
-  }: IFindAllInDayFromProviderDTO): Promise&lt;Appointment[]&gt; {
-    const <span class="cstat-no" title="statement not covered" >filterApointments = this.apointments.filter(</span>
-<span class="fstat-no" title="function not covered" >      apointment </span>=&gt;
-<span class="cstat-no" title="statement not covered" >        apointment.provider_id === provider_id &amp;&amp;</span>
-        getDate(apointment.date) === day &amp;&amp;
-        getMonth(apointment.date) + 1 === month &amp;&amp;
-        getYear(apointment.date) === year,
-    );
-<span class="cstat-no" title="statement not covered" >    return filterApointments;</span>
   }
 }
 export default AppointmentsRepository;
@@ -259,7 +256,7 @@ export default AppointmentsRepository;
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank">istanbul</a>
-                at Fri Jun 12 2020 13:45:05 GMT-0300 (GMT-03:00)
+                at Fri Jun 12 2020 19:36:38 GMT-0300 (GMT-03:00)
             </div>
         </div>
         <script src="../../../prettify.js"></script>
