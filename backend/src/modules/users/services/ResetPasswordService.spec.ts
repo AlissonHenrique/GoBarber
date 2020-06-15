@@ -1,7 +1,7 @@
 import 'reflect-metadata';
 import ResetPasswordService from './ResetPasswordService';
 import FakeUserRepository from '../repositories/fakes/FakeUsersRepository';
-import AppError from '@shared/erros/AppError';
+import AppError from '@shared/errors/AppError';
 import FakeMailProvider from '@shared/container/providers/MailProvider/fakes/FakeMailProvider';
 import FakeUserTokenRepository from '../repositories/fakes/FakeUserTokenRepository';
 import FakeHashProvider from '../providers/HashProvider/fakes/FakeHashProvider';

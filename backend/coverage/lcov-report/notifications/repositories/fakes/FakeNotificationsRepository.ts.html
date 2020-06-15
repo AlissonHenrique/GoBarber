@@ -23,9 +23,9 @@
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">100% </span>
+                <span class="strong">0% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>13/13</span>
+                <span class='fraction'>0/13</span>
             </div>
         
             
@@ -37,16 +37,16 @@
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">100% </span>
+                <span class="strong">0% </span>
                 <span class="quiet">Functions</span>
-                <span class='fraction'>2/2</span>
+                <span class='fraction'>0/2</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">100% </span>
+                <span class="strong">0% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>13/13</span>
+                <span class='fraction'>0/13</span>
             </div>
         
             
@@ -55,7 +55,7 @@
             Press <em>n</em> or <em>j</em> to go to the next uncovered block, <em>b</em>, <em>p</em> or <em>k</em> for the previous block.
         </p>
     </div>
-    <div class='status-line high'></div>
+    <div class='status-line low'></div>
     <pre><table class="coverage">
 <tr><td class="line-count quiet"><a name='L1'></a><a href='#L1'>1</a>
 <a name='L2'></a><a href='#L2'>2</a>
@@ -82,56 +82,56 @@
 <a name='L23'></a><a href='#L23'>23</a>
 <a name='L24'></a><a href='#L24'>24</a>
 <a name='L25'></a><a href='#L25'>25</a>
-<a name='L26'></a><a href='#L26'>26</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">1x</span>
+<a name='L26'></a><a href='#L26'>26</a></td><td class="line-coverage quiet"><span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">5x</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">import { ObjectID } from 'mongodb';
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js"><span class="cstat-no" title="statement not covered" >import { ObjectID } from 'mongodb';</span>
 &nbsp;
 import INotificationsRepository from '@modules/notifications/repositories/INotificationsRepository';
 import INotificationsDTO from '@modules/notifications/dtos/ICreateNotificationDTO';
 &nbsp;
-import Notification from '../../infra/typeorm/schemas/Notification';
+<span class="cstat-no" title="statement not covered" >import Notification from '../../infra/typeorm/schemas/Notification';</span>
 &nbsp;
-class NotificationsRepository implements INotificationsRepository {
-  private notifications: Notification[] = [];
+<span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" >class NotificationsRepository implements INotificationsRepository {</span></span>
+  private <span class="cstat-no" title="statement not covered" >notifications: Notification[] = [];</span>
 &nbsp;
-  public async create({
-    content,
-    recipient_id,
+<span class="fstat-no" title="function not covered" >  public async <span class="cstat-no" title="statement not covered" >c</span>reate({</span>
+<span class="cstat-no" title="statement not covered" >    content,</span>
+<span class="cstat-no" title="statement not covered" >    recipient_id,</span>
   }: INotificationsDTO): Promise&lt;Notification&gt; {
-    const notification = new Notification();
+    const <span class="cstat-no" title="statement not covered" >notification = new Notification();</span>
 &nbsp;
-    Object.assign(notification, { id: new ObjectID(), content, recipient_id });
+<span class="cstat-no" title="statement not covered" >    Object.assign(notification, { id: new ObjectID(), content, recipient_id });</span>
 &nbsp;
-    this.notifications.push(notification);
+<span class="cstat-no" title="statement not covered" >    this.notifications.push(notification);</span>
 &nbsp;
-    return notification;
+<span class="cstat-no" title="statement not covered" >    return notification;</span>
   }
-}
+<span class="cstat-no" title="statement not covered" >}</span>
 &nbsp;
-export default NotificationsRepository;
+<span class="cstat-no" title="statement not covered" >export default NotificationsRepository;</span>
 &nbsp;</pre></td></tr></table></pre>
 
                 <div class='push'></div><!-- for sticky footer -->
@@ -139,7 +139,7 @@ export default NotificationsRepository;
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank">istanbul</a>
-                at Mon Jun 15 2020 11:37:38 GMT-0300 (GMT-03:00)
+                at Mon Jun 15 2020 18:31:40 GMT-0300 (GMT-03:00)
             </div>
         </div>
         <script src="../../../prettify.js"></script>

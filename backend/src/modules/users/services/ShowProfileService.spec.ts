@@ -1,5 +1,5 @@
 import 'reflect-metadata';
-import AppError from '@shared/erros/AppError';
+import AppError from '@shared/errors/AppError';
 
 import FakeUserRepository from '../repositories/fakes/FakeUsersRepository';
 import ShowProfile from './ShowProfileService';

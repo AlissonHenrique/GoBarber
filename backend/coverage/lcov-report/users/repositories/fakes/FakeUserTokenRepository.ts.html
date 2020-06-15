@@ -23,9 +23,9 @@
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">100% </span>
+                <span class="strong">0% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>15/15</span>
+                <span class='fraction'>0/15</span>
             </div>
         
             
@@ -37,16 +37,16 @@
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">100% </span>
+                <span class="strong">0% </span>
                 <span class="quiet">Functions</span>
-                <span class='fraction'>4/4</span>
+                <span class='fraction'>0/4</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">100% </span>
+                <span class="strong">0% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>15/15</span>
+                <span class='fraction'>0/15</span>
             </div>
         
             
@@ -55,7 +55,7 @@
             Press <em>n</em> or <em>j</em> to go to the next uncovered block, <em>b</em>, <em>p</em> or <em>k</em> for the previous block.
         </p>
     </div>
-    <div class='status-line high'></div>
+    <div class='status-line low'></div>
     <pre><table class="coverage">
 <tr><td class="line-count quiet"><a name='L1'></a><a href='#L1'>1</a>
 <a name='L2'></a><a href='#L2'>2</a>
@@ -89,45 +89,45 @@
 <a name='L30'></a><a href='#L30'>30</a>
 <a name='L31'></a><a href='#L31'>31</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">2x</span>
-<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">2x</span>
-<span class="cline-any cline-yes">7x</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">2x</span>
-<span class="cline-any cline-yes">5x</span>
-<span class="cline-any cline-yes">5x</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">5x</span>
-<span class="cline-any cline-yes">5x</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">2x</span>
-<span class="cline-any cline-yes">4x</span>
-<span class="cline-any cline-yes">3x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">4x</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">2x</span>
-<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">import IUserTokenRepository from '@modules/users/repositories/IUserTokenRepository';
 &nbsp;
-import UserToken from '../../infra/typeorm/entities/UserToken';
-import { uuid } from 'uuidv4';
+<span class="cstat-no" title="statement not covered" >import UserToken from '../../infra/typeorm/entities/UserToken';</span>
+<span class="cstat-no" title="statement not covered" >import { uuid } from 'uuidv4';</span>
 &nbsp;
-class FakeUserTokenRepository implements IUserTokenRepository {
-  private userToken: UserToken[] = [];
+<span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" >class FakeUserTokenRepository implements IUserTokenRepository {</span></span>
+  private <span class="cstat-no" title="statement not covered" >userToken: UserToken[] = [];</span>
 &nbsp;
-  public async generate(user_id: string): Promise&lt;UserToken&gt; {
-    const userToken = new UserToken();
-    Object.assign(userToken, {
+<span class="fstat-no" title="function not covered" >  public async <span class="cstat-no" title="statement not covered" >g</span>enerate(user_id: string): Promise&lt;UserToken&gt; {</span>
+    const <span class="cstat-no" title="statement not covered" >userToken = new UserToken();</span>
+<span class="cstat-no" title="statement not covered" >    Object.assign(userToken, {</span>
       id: uuid(),
       token: uuid(),
       user_id,
@@ -135,18 +135,18 @@ class FakeUserTokenRepository implements IUserTokenRepository {
       updated_at: new Date(),
     });
 &nbsp;
-    this.userToken.push(userToken);
-    return userToken;
+<span class="cstat-no" title="statement not covered" >    this.userToken.push(userToken);</span>
+<span class="cstat-no" title="statement not covered" >    return userToken;</span>
   }
-  public async findByToken(token: string): Promise&lt;UserToken | undefined&gt; {
-    const userToken = this.userToken.find(
-      findToken =&gt; findToken.token === token,
+<span class="fstat-no" title="function not covered" >  public async <span class="cstat-no" title="statement not covered" >f</span>indByToken(token: string): Promise&lt;UserToken | undefined&gt; {</span>
+    const <span class="cstat-no" title="statement not covered" >userToken = this.userToken.find(</span>
+<span class="fstat-no" title="function not covered" >      findToken </span>=&gt; <span class="cstat-no" title="statement not covered" >findToken.token === token,</span>
     );
 &nbsp;
-    return userToken;
+<span class="cstat-no" title="statement not covered" >    return userToken;</span>
   }
-}
-export default FakeUserTokenRepository;
+<span class="cstat-no" title="statement not covered" >}</span>
+<span class="cstat-no" title="statement not covered" >export default FakeUserTokenRepository;</span>
 &nbsp;</pre></td></tr></table></pre>
 
                 <div class='push'></div><!-- for sticky footer -->
@@ -154,7 +154,7 @@ export default FakeUserTokenRepository;
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank">istanbul</a>
-                at Mon Jun 15 2020 11:37:38 GMT-0300 (GMT-03:00)
+                at Mon Jun 15 2020 18:31:40 GMT-0300 (GMT-03:00)
             </div>
         </div>
         <script src="../../../prettify.js"></script>

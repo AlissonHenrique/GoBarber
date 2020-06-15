@@ -4,7 +4,7 @@
 
 import { injectable, inject } from 'tsyringe';
 import IUsersRepository from '../repositories/IUsersRepository';
-import AppError from '@shared/erros/AppError';
+import AppError from '@shared/errors/AppError';
 import IUserTokenRepository from '../repositories/IUserTokenRepository';
 import IHashProvider from '../providers/HashProvider/models/IHashProvider';
 import { isAfter, addHours } from 'date-fns';

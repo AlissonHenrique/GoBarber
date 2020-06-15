@@ -1,39 +1,45 @@
-import 'reflect-metadata';
-import AppError from '@shared/erros/AppError';
+import FakeUsersRepository from '@modules/users/repositories/fakes/FakeUsersRepository';
+import ListProvidersService from '@modules/appointments/services/ListProviderService';
+import FakeCacheProvider from '@shared/container/providers/CacheProvider/fakes/FakeCacheProviders';
 
-import FakeUserRepository from '@modules/users/repositories/fakes/FakeUsersRepository';
-import ListProviderService from './ListProviderServise';
+let fakeUsersRepository: FakeUsersRepository;
+let listProvidersService: ListProvidersService;
+let fakeCacheProvider: FakeCacheProvider;
 
-let fakeUserRepository: FakeUserRepository;
-let listProvider: ListProviderService;
-
-describe('ListProvider', () => {
+describe('ListProvidersService', () => {
   beforeEach(() => {
-    fakeUserRepository = new FakeUserRepository();
-    listProvider = new ListProviderService(fakeUserRepository);
+    fakeUsersRepository = new FakeUsersRepository();
+    fakeCacheProvider = new FakeCacheProvider();
+
+    listProvidersService = new ListProvidersService(
+      fakeUsersRepository,
+      fakeCacheProvider,
+    );
   });
 
-  it('shold be able to list the provider', async () => {
-    const user1 = await fakeUserRepository.create({
+  it('should be able to list providers', async () => {
+    const loggedUser = await fakeUsersRepository.create({
       name: 'John Doe',
-      email: 'jhon@example.com',
-      password: '123456',
-    });
-    const user2 = await fakeUserRepository.create({
-      name: 'John Tre',
-      email: 'jhontre@example.com',
-      password: '123456',
+      email: 'johndoe@example.com',
+      password: '123123',
     });
 
-    const loggedUser = await fakeUserRepository.create({
-      name: 'John Qua',
-      email: 'jhonqua@example.com',
-      password: '123456',
+    const fakeUser1 = await fakeUsersRepository.create({
+      name: 'Fulano',
+      email: 'fulano@example.com',
+      password: '123123',
     });
 
-    const providers = await listProvider.execute({
+    const fakeUser2 = await fakeUsersRepository.create({
+      name: 'Cicrano',
+      email: 'cicrano@example.com',
+      password: '123123',
+    });
+
+    const providers = await listProvidersService.execute({
       user_id: loggedUser.id,
     });
-    await expect(providers).toEqual([user1, user2]);
+
+    expect(providers).toEqual([fakeUser1, fakeUser2]);
   });
 });
