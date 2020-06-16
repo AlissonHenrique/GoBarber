@@ -1,6 +1,7 @@
 import multer, { StorageEngine } from 'multer';
 import crypto from 'crypto';
 import path from 'path';
+import 'dotenv/config';
 
 const tmpFolder = path.resolve(__dirname, '..', '..', 'tmp');
 interface IUploadConfig {
