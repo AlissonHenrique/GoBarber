@@ -1,9 +1,10 @@
-import styled, { css } from 'styled-components/native';
+import styled, {css} from 'styled-components/native';
 import FeatherIcon from 'react-native-vector-icons/Feather';
 
 interface ContainerPorps {
   isFocused: boolean;
   isErrored: boolean;
+ 
 }
 
 export const Container = styled.View<ContainerPorps>`
