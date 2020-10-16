@@ -6,7 +6,7 @@
     "port": 5432,
     "username": "postgres",
     "password": "docker",
-    "databse": "gobarber",
+    "database": "gobarber",
     "entities": ["./src/models/**/entities/*.ts"],
     "migrations": ["./src/shared/infra/typeorm/migrations/*.ts"],
     "cli": {
